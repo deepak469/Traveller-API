@@ -14,11 +14,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/user/{id}")
     public User getUser(@PathVariable("id") Integer userId){
        return userService.getUser(userId);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/user")
     public void createUser(@RequestBody User user){
         userService.addUser(user);
